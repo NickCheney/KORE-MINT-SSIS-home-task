@@ -39,4 +39,4 @@ Other records are filtered out of they:
 - Have a data field before 1970 or after today
 - Have a LastLoginDate less than their RegistrationDate
 - Have a PurchaseTotal above 100000
-- Have an email not following the *@*.* format (could be further narrowed down later)
+- Have an email not following the \*@\*.\* format (could be further narrowed down later)
