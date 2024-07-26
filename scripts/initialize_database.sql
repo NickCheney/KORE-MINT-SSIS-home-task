@@ -63,4 +63,4 @@ BEGIN
 		RecordLastUpdated DATETIME DEFAULT GETDATE()
 	);
 END
-GO
+GO

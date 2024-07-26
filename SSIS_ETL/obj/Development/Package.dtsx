@@ -1,0 +1,2024 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/25/2024 3:42:12 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-BRUQBTN1"
+  DTS:CreatorName="LAPTOP-BRUQBTN1\niche"
+  DTS:DTSID="{45605E73-4E5E-4BD7-9710-FC1F76902B19}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{3BF4F756-27AF-410B-AC0A-2E844EB840F2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[backup_prod_table.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{1EFB38BD-0A94-4372-BBDC-DA53E683961B}"
+      DTS:ObjectName="backup_prod_table.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\niche\Documents\Coding\Personal Projects\KORE-MINT-SSIS-home-task\scripts\backup_prod_table.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[clean_staging_table.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{2A59C7B9-2DAF-4720-A408-E9D14EA5A621}"
+      DTS:ObjectName="clean_staging_table.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\niche\Documents\Coding\Personal Projects\KORE-MINT-SSIS-home-task\scripts\clean_staging_table.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{616B9484-6122-453A-9833-9321A5C2CBC5}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4105"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\niche\Documents\Coding\Personal Projects\KORE-MINT-SSIS-home-task\SSIS_ETL\data_sources\users.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserID"
+              DTS:DTSID="{6D8E30C0-5382-4E1E-96E5-4E3C2C84B93F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FullName"
+              DTS:DTSID="{E757E5EC-C628-415B-9B45-CBF38D17993C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="6"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{EEC14AB3-FE72-4FE9-8D5A-1E8FF01AC965}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Email"
+              DTS:DTSID="{ADDB5E65-CB6C-4291-AACC-1F1EA4A640A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="16"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegistrationDate"
+              DTS:DTSID="{CA069584-5071-491C-9F9A-0EDCA0FB2335}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="16"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastLoginDate"
+              DTS:DTSID="{FE002BEC-F0C7-4E03-92C1-094BC8B50531}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="12"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PurchaseTotal"
+              DTS:DTSID="{74106E28-CF43-4EAB-BB17-07DBD315F387}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D4BC789B-1283-4CDB-B704-097F24527C72}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4105"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\niche\Documents\Coding\Personal Projects\KORE-MINT-SSIS-home-task\SSIS_ETL\data_sources\error_records.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserID"
+              DTS:DTSID="{7FC815BB-58A9-4973-8170-682804516A4B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FullName"
+              DTS:DTSID="{115A2B51-EA88-457F-9F5D-CB22EA68F8DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="6"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{042A0FF3-BAB2-4B28-BF6C-4DDE6354D08D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Email"
+              DTS:DTSID="{6ED1D604-B1F7-4197-87AB-1ECE0E4B9B52}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="16"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegistrationDate"
+              DTS:DTSID="{2CF93802-B82E-4AE8-82D6-51695A96DCD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="16"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastLoginDate"
+              DTS:DTSID="{81A92C3F-838C-4743-AD0B-007679DD0BC0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="12"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PurchaseTotal"
+              DTS:DTSID="{779C5283-1A4F-4C16-846E-EC7648CFF8E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{AF051EF4-ED7D-4316-B651-2CCBD5A33D02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{5C883D8B-B3E4-4C7B-BCD5-72A9D4BB438F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-BRUQBTN1.KoreAssignment_Nick_Cheney]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D03AE77D-9F83-4D97-A115-0045EFBCFD4F}"
+      DTS:ObjectName="LAPTOP-BRUQBTN1.KoreAssignment_Nick_Cheney">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-BRUQBTN1;Initial Catalog=KoreAssignment_Nick_Cheney;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{D03AE77D-9F83-4D97-A115-0045EFBCFD4F}LAPTOP-BRUQBTN1.KoreAssignment_Nick_Cheney;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{3D797992-E7B5-4C99-80CF-6DE6E3DFD493}"
+      DTS:ObjectName="SQL">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="C:\Users\niche\Documents\SQL Server Management Studio\Code Snippets\SQL" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[update_prod_table.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{279D3FF3-16C9-4A2F-A68A-2F58A91B3E89}"
+      DTS:ObjectName="update_prod_table.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\niche\Documents\Coding\Personal Projects\KORE-MINT-SSIS-home-task\scripts\update_prod_table.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Backup Production Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{194F198D-7155-4CD4-BB9C-7B0D4E1DCBD0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Backup Production Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D03AE77D-9F83-4D97-A115-0045EFBCFD4F}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="backup_prod_table.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Clear Staging Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F2E9E2DA-247D-441B-AD22-87EE22036607}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clear Staging Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D03AE77D-9F83-4D97-A115-0045EFBCFD4F}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stg.Users" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete Staging Table Bad Rows"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C918C169-8AAD-400C-A6E8-B05AF4F78308}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete Staging Table Bad Rows"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D03AE77D-9F83-4D97-A115-0045EFBCFD4F}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="clean_staging_table.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load New Data Into Staging Table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{58CE4569-FA19-4F97-8C7A-4500A96BC9EE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load New Data Into Staging Table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load New Data Into Staging Table\Convert Columns"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Convert Columns"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load New Data Into Staging Table\Convert Columns.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Convert Columns.Inputs[Derived Column Input].Columns[UserID]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="UserID"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[UserID]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_UI8)[REPLACE]([REPLACE](#{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[UserID]},"\"",""),"'","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_UI8)REPLACE(REPLACE(UserID,"\"",""),"'","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Convert Columns.Inputs[Derived Column Input].Columns[FullName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FullName"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[FullName]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE]([REPLACE](#{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[FullName]},"\"",""),"'","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(REPLACE(FullName,"\"",""),"'","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Convert Columns.Inputs[Derived Column Input].Columns[Age]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Age"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Age]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_UI1)(#{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Age]} == "\"\"" || #{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Age]} == "\"null\"" ? NULL(DT_WSTR,6) : [REPLACE]([REPLACE](#{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Age]},"\"",""),"'",""))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_UI1)(Age == "\"\"" || Age == "\"null\"" ? NULL(DT_WSTR,6) : REPLACE(REPLACE(Age,"\"",""),"'",""))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Convert Columns.Inputs[Derived Column Input].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Email"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Email]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE]([REPLACE](#{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Email]},"\"",""),"'","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(REPLACE(Email,"\"",""),"'","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Convert Columns.Inputs[Derived Column Input].Columns[RegistrationDate]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="RegistrationDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)(#{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]} == "\"\"" || #{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]} == "\"null\"" ? NULL(DT_WSTR,16) : [REPLACE]([REPLACE](#{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]},"\"",""),"'",""))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)(RegistrationDate == "\"\"" || RegistrationDate == "\"null\"" ? NULL(DT_WSTR,16) : REPLACE(REPLACE(RegistrationDate,"\"",""),"'",""))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Convert Columns.Inputs[Derived Column Input].Columns[LastLoginDate]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="LastLoginDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)(#{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]} == "\"\"" || #{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]} == "\"null\"" ? NULL(DT_WSTR,16) : [REPLACE]([REPLACE](#{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]},"\"",""),"'",""))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)(LastLoginDate == "\"\"" || LastLoginDate == "\"null\"" ? NULL(DT_WSTR,16) : REPLACE(REPLACE(LastLoginDate,"\"",""),"'",""))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Convert Columns.Inputs[Derived Column Input].Columns[PurchaseTotal]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="PurchaseTotal"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_CY)(#{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]} == "\"\"" || #{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]} == "\"null\"" ? NULL(DT_WSTR,12) : [REPLACE]([REPLACE](#{Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]},"\"",""),"'",""))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_CY)(PurchaseTotal == "\"\"" || PurchaseTotal == "\"null\"" ? NULL(DT_WSTR,12) : REPLACE(REPLACE(PurchaseTotal,"\"",""),"'",""))</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load New Data Into Staging Table\Convert Columns.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load New Data Into Staging Table\Convert Columns.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load New Data Into Staging Table\Convert Columns.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load New Data Into Staging Table\Convert Columns.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Convert Columns.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load New Data Into Staging Table\Convert Columns.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Convert Columns.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load New Data Into Staging Table\Convert Columns.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load New Data Into Staging Table\Load CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="4105"
+              name="Load CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load New Data Into Staging Table\Load CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[UserID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[UserID]"
+                      length="15"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[UserID]"
+                      name="UserID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[FullName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[FullName]"
+                      length="255"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[FullName]"
+                      name="FullName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Age]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      length="6"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[Email]"
+                      length="255"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Email]"
+                      name="Email"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[RegistrationDate]"
+                      length="16"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]"
+                      name="RegistrationDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[LastLoginDate]"
+                      length="16"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]"
+                      name="LastLoginDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[PurchaseTotal]"
+                      length="12"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]"
+                      name="PurchaseTotal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[UserID]"
+                      dataType="wstr"
+                      length="15"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      dataType="wstr"
+                      length="6"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[RegistrationDate]"
+                      dataType="wstr"
+                      length="16"
+                      name="RegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[LastLoginDate]"
+                      dataType="wstr"
+                      length="16"
+                      name="LastLoginDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].ExternalColumns[PurchaseTotal]"
+                      dataType="wstr"
+                      length="12"
+                      name="PurchaseTotal" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load Rows into Staging Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg].[Users]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-BRUQBTN1.KoreAssignment_Nick_Cheney]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-BRUQBTN1.KoreAssignment_Nick_Cheney]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].Columns[FullName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FullName"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[FullName]" />
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Email"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Email]" />
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].Columns[UserID]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="UserID"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[UserID]" />
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].Columns[Age]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].Columns[RegistrationDate]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="RegistrationDate"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[RegistrationDate]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]" />
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].Columns[LastLoginDate]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="LastLoginDate"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[LastLoginDate]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]" />
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].Columns[PurchaseTotal]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="PurchaseTotal"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTotal]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[StgID]"
+                      dataType="i4"
+                      name="StgID" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
+                      dataType="i4"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[RegistrationDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="RegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[LastLoginDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="LastLoginDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTotal]"
+                      dataType="r8"
+                      name="PurchaseTotal" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="4105"
+              name="Write Failed Rows to CSV"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].Columns[UserID]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="UserID"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[UserID]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[UserID]" />
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].Columns[FullName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FullName"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[FullName]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[FullName]" />
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].Columns[Age]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Email"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[Email]" />
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].Columns[RegistrationDate]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="RegistrationDate"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[RegistrationDate]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[RegistrationDate]" />
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].Columns[LastLoginDate]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="LastLoginDate"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[LastLoginDate]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[LastLoginDate]" />
+                    <inputColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].Columns[PurchaseTotal]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="PurchaseTotal"
+                      externalMetadataColumnId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[PurchaseTotal]"
+                      lineageId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output].Columns[PurchaseTotal]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[UserID]"
+                      dataType="wstr"
+                      length="15"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[Age]"
+                      dataType="wstr"
+                      length="6"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[RegistrationDate]"
+                      dataType="wstr"
+                      length="16"
+                      name="RegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[LastLoginDate]"
+                      dataType="wstr"
+                      length="16"
+                      name="LastLoginDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[PurchaseTotal]"
+                      dataType="wstr"
+                      length="12"
+                      name="PurchaseTotal" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load New Data Into Staging Table.Paths[Derived Column Error Output]"
+              endId="Package\Load New Data Into Staging Table\Write Failed Rows to CSV.Inputs[Flat File Destination Input]"
+              name="Derived Column Error Output"
+              startId="Package\Load New Data Into Staging Table\Convert Columns.Outputs[Derived Column Error Output]" />
+            <path
+              refId="Package\Load New Data Into Staging Table.Paths[Derived Column Output]"
+              endId="Package\Load New Data Into Staging Table\Load Rows into Staging Table.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load New Data Into Staging Table\Convert Columns.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load New Data Into Staging Table.Paths[Flat File Source Output]"
+              endId="Package\Load New Data Into Staging Table\Convert Columns.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Load New Data Into Staging Table\Load CSV.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Log Staging Table Bad Rows"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5F784F2E-E787-4F0F-ACEE-D95014B0F9BC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Log Staging Table Bad Rows"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Log Staging Table Bad Rows\Log To Error CSV"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="4105"
+              name="Log To Error CSV"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">false</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].Columns[UserID]"
+                      cachedDataType="i4"
+                      cachedName="UserID"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[UserID]"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[UserID]" />
+                    <inputColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].Columns[FullName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FullName"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[FullName]"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[FullName]" />
+                    <inputColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].Columns[Age]"
+                      cachedDataType="i4"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Email"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[Email]" />
+                    <inputColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].Columns[RegistrationDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="RegistrationDate"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[RegistrationDate]"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[RegistrationDate]" />
+                    <inputColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].Columns[LastLoginDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LastLoginDate"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[LastLoginDate]"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[LastLoginDate]" />
+                    <inputColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].Columns[PurchaseTotal]"
+                      cachedDataType="r8"
+                      cachedName="PurchaseTotal"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[PurchaseTotal]"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[PurchaseTotal]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[UserID]"
+                      dataType="wstr"
+                      length="15"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[Age]"
+                      dataType="wstr"
+                      length="6"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[RegistrationDate]"
+                      dataType="wstr"
+                      length="16"
+                      name="RegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[LastLoginDate]"
+                      dataType="wstr"
+                      length="16"
+                      name="LastLoginDate" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[PurchaseTotal]"
+                      dataType="wstr"
+                      length="12"
+                      name="PurchaseTotal" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Log Staging Table Bad Rows\Query Invalid Rows"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Query Invalid Rows"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">/*
+  Script Name: isolate_bad_staging_records.sql
+  Description: This script selects staging table rows that don't meet data quality requirements 
+  Author: Nick Cheney
+  Date Created: 2024-07-25
+  Version: 1.0
+  Notes:
+    - This script is run as part of the SSIS process.
+    - See README.md for a description of bad record criteria
+*/
+
+BEGIN
+SELECT * FROM stg.Users stgU
+WHERE age NOT BETWEEN 1 AND 150
+	OR LastLoginDate NOT BETWEEN '1970-01-01' and GETDATE()
+	OR RegistrationDate NOT BETWEEN '1970-01-01' and GETDATE()
+	OR RegistrationDate &gt; LastLoginDate
+	OR PurchaseTotal &gt;= 100000
+	OR Email NOT LIKE '%@%.%'
+	OR UserID IN (
+		SELECT UserID FROM stg.Users GROUP BY UserID HAVING COUNT(*) &gt; 1
+	)
+	OR Email IN (
+		SELECT Email FROM stg.Users GROUP BY Email HAVING COUNT(*) &gt; 1
+	)
+	OR EXISTS (
+		SELECT * from prod.Users prodU WHERE prodU.Email = stgU.Email and prodU.UserID &lt;&gt; stgU.UserID
+	)
+;
+END</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-BRUQBTN1.KoreAssignment_Nick_Cheney]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-BRUQBTN1.KoreAssignment_Nick_Cheney]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[StgID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[StgID]"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[StgID]"
+                      name="StgID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[UserID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[UserID]"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[UserID]"
+                      name="UserID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[FullName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[FullName]"
+                      length="255"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[FullName]"
+                      name="FullName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[Age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[Age]"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[Email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[Email]"
+                      length="255"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[Email]"
+                      name="Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[RegistrationDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[RegistrationDate]"
+                      length="10"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[RegistrationDate]"
+                      name="RegistrationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[LastLoginDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[LastLoginDate]"
+                      length="10"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[LastLoginDate]"
+                      name="LastLoginDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[PurchaseTotal]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[PurchaseTotal]"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].Columns[PurchaseTotal]"
+                      name="PurchaseTotal"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[StgID]"
+                      dataType="i4"
+                      name="StgID" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[UserID]"
+                      dataType="i4"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[RegistrationDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="RegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[LastLoginDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="LastLoginDate" />
+                    <externalMetadataColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output].ExternalColumns[PurchaseTotal]"
+                      dataType="r8"
+                      name="PurchaseTotal" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[StgID]"
+                      dataType="i4"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[StgID]"
+                      name="StgID" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[UserID]"
+                      dataType="i4"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[UserID]"
+                      name="UserID" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[FullName]"
+                      name="FullName" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[Age]"
+                      dataType="i4"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[Age]"
+                      name="Age" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[Email]"
+                      name="Email" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[RegistrationDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[RegistrationDate]"
+                      name="RegistrationDate" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[LastLoginDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[LastLoginDate]"
+                      name="LastLoginDate" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[PurchaseTotal]"
+                      dataType="r8"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[PurchaseTotal]"
+                      name="PurchaseTotal" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Log Staging Table Bad Rows.Paths[OLE DB Source Output]"
+              endId="Package\Log Staging Table Bad Rows\Log To Error CSV.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Log Staging Table Bad Rows\Query Invalid Rows.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Merge Staging into Production"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E85DFE08-FD90-4A67-8417-6156FFA97C50}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Merge Staging into Production"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D03AE77D-9F83-4D97-A115-0045EFBCFD4F}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="update_prod_table.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Re-Clear Staging Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{42006991-F5E8-45D1-A7A4-2BCD62AF210A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Re-Clear Staging Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D03AE77D-9F83-4D97-A115-0045EFBCFD4F}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stg.Users" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{8B8307BF-FBD0-477E-AF16-8F3A7CA3DB7D}"
+      DTS:From="Package\Clear Staging Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load New Data Into Staging Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{DF0FEE29-8E18-414D-8FF3-056423B14C16}"
+      DTS:From="Package\Load New Data Into Staging Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Log Staging Table Bad Rows" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{E867FB85-C1C3-4AF2-8786-72FFDBFA8DBE}"
+      DTS:From="Package\Log Staging Table Bad Rows"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Delete Staging Table Bad Rows" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{EE8D68A6-C6C8-48C5-BF62-BF0798D84549}"
+      DTS:From="Package\Delete Staging Table Bad Rows"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Backup Production Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{EB3538D9-A0C7-4D21-A80F-70BA8AE64F3F}"
+      DTS:From="Package\Merge Staging into Production"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Re-Clear Staging Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{00DB9CEC-8978-4ECC-AE50-60B501B54D58}"
+      DTS:From="Package\Backup Production Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Merge Staging into Production" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Backup Production Table"
+          TopLeft="381,185" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Clear Staging Table"
+          TopLeft="64,52" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\Delete Staging Table Bad Rows"
+          TopLeft="647,182" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\Load New Data Into Staging Table"
+          TopLeft="303,53" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Log Staging Table Bad Rows"
+          TopLeft="651,54" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Merge Staging into Production"
+          TopLeft="43,181" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Re-Clear Staging Table"
+          TopLeft="63,306" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="240,73.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63,0"
+              Start="0,0"
+              End="55.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="550,74.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101,0"
+              Start="0,0"
+              End="93.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="93.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="763,96">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86"
+              Start="0,0"
+              End="0,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="647,204.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-64,0"
+              Start="0,0"
+              End="-56.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-56.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="158.25,223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83"
+              Start="0,0"
+              End="0,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="381,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-111,0"
+              Start="0,0"
+              End="-103.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-103.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load New Data Into Staging Table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Load New Data Into Staging Table\Load Rows into Staging Table"
+          TopLeft="290,200" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Load New Data Into Staging Table\Convert Columns"
+          TopLeft="518,40" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Load New Data Into Staging Table\Load CSV"
+          TopLeft="280,56" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Load New Data Into Staging Table\Write Failed Rows to CSV"
+          TopLeft="633,228" />
+        <EdgeLayout
+          Id="Package\Load New Data Into Staging Table.Paths[Flat File Source Output]"
+          TopLeft="409,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="109,-16"
+              Start="0,0"
+              End="101.5,-16">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="50.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.5,0"
+                    Point2="54.5,0"
+                    Point3="54.5,-4" />
+                  <mssgle:LineSegment
+                    End="54.5,-12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54.5,-12"
+                    Point2="54.5,-16"
+                    Point3="58.5,-16" />
+                  <mssgle:LineSegment
+                    End="101.5,-16" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load New Data Into Staging Table.Paths[Derived Column Output]"
+          TopLeft="574,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-171.5,118"
+              Start="0,0"
+              End="-171.5,110.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.8840579710145" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.8840579710145"
+                    Point2="0,47.8840579710145"
+                    Point3="-4,47.8840579710145" />
+                  <mssgle:LineSegment
+                    End="-167.5,47.8840579710145" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-167.5,47.8840579710145"
+                    Point2="-171.5,47.8840579710145"
+                    Point3="-171.5,51.8840579710145" />
+                  <mssgle:LineSegment
+                    End="-171.5,110.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load New Data Into Staging Table.Paths[Derived Column Error Output]"
+          TopLeft="626,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="110,146"
+              Start="0,0"
+              End="110,138.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.2463768115942" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55.2463768115942"
+                    Point2="0,59.2463768115942"
+                    Point3="4,59.2463768115942" />
+                  <mssgle:LineSegment
+                    End="106,59.2463768115942" />
+                  <mssgle:CubicBezierSegment
+                    Point1="106,59.2463768115942"
+                    Point2="110,59.2463768115942"
+                    Point3="110,63.2463768115942" />
+                  <mssgle:LineSegment
+                    End="110,138.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-9.96138671874999,64.2463768115942,129.9227734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load New Data Into Staging Table\Load Rows into Staging Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Log Staging Table Bad Rows">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Log Staging Table Bad Rows\Query Invalid Rows"
+          TopLeft="280,81" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Log Staging Table Bad Rows\Log To Error CSV"
+          TopLeft="352,197" />
+        <EdgeLayout
+          Id="Package\Log Staging Table Bad Rows.Paths[OLE DB Source Output]"
+          TopLeft="367,123">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68,74"
+              Start="0,0"
+              End="68,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33"
+                    Point2="0,37"
+                    Point3="4,37" />
+                  <mssgle:LineSegment
+                    End="64,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64,37"
+                    Point2="68,37"
+                    Point3="68,41" />
+                  <mssgle:LineSegment
+                    End="68,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Log Staging Table Bad Rows\Query Invalid Rows">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
